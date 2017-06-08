@@ -9,7 +9,13 @@
       <Value Profile="(Default)">https://hsbc-image-database.documents.azure.com:443/</Value>
     </Setting>
     <Setting Name="DocDbKey" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">Jvx9ScleKSWy0hQrBp3kGsqKryNoAXmBhfMQIYFzBHzpcHgUNTGGjpEmAhqheizy2v0c2SxIpWmrLYFdlzhb2g</Value>
+      <Value Profile="(Default)">Jvx9ScleKSWy0hQrBp3kGsqKryNoAXmBhfMQIYFzBHzpcHgUNTGGjpEmAhqheizy2v0c2SxIpWmrLYFdlzhb2g==</Value>
+    </Setting>
+    <Setting Name="DocDbName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">ImagesDatabase</Value>
+    </Setting>
+    <Setting Name="DocDbCollectionName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Images</Value>
     </Setting>
   </Settings>
 </SettingsFile>

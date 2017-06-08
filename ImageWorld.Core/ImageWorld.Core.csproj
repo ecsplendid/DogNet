@@ -59,11 +59,15 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Config.settings</DependentUpon>
     </Compile>
-    <Compile Include="ServiceBusHelper.cs" />
+    <Compile Include="Helpers\DocumentDbHelper.cs" />
+    <Compile Include="Class\Image.cs" />
+    <Compile Include="Helpers\ServiceBusHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Config.settings">
       <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Config.Designer.cs</LastGenOutput>

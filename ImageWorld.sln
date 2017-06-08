@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageWorld.Core", "ImageWorld.Core\ImageWorld.Core.csproj", "{12A67933-1489-4CB4-A41D-CCE4CD251827}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageWorld.Tests", "ImageWorld.Tests\ImageWorld.Tests.csproj", "{D52FFA9E-51F3-4D05-A6C1-D9EB485EBF82}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{12A67933-1489-4CB4-A41D-CCE4CD251827}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12A67933-1489-4CB4-A41D-CCE4CD251827}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12A67933-1489-4CB4-A41D-CCE4CD251827}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D52FFA9E-51F3-4D05-A6C1-D9EB485EBF82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D52FFA9E-51F3-4D05-A6C1-D9EB485EBF82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D52FFA9E-51F3-4D05-A6C1-D9EB485EBF82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D52FFA9E-51F3-4D05-A6C1-D9EB485EBF82}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
