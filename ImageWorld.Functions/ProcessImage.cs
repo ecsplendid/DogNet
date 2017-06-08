@@ -31,6 +31,9 @@ namespace ImageWorld.Functions
                     image
                     );
 
+            CustomerVisionHelper
+                .RunCustomVisionService(image);
+            
             if (image.Tags == null) return;
 
             log.Info($"Adorned image tags to it from cognitive services ({string.Join(",", image.Tags)})");

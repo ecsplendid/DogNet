@@ -23,5 +23,11 @@
     <Setting Name="VisionBaseAddress" Type="System.String" Scope="Application">
       <Value Profile="(Default)">https://southeastasia.api.cognitive.microsoft.com/vision/v1.0</Value>
     </Setting>
+    <Setting Name="CustomVisionPredictionKey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">5e869f76b47943a2a7406eb55b3057dd</Value>
+    </Setting>
+    <Setting Name="CustomVisionIterationId" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">10358a1a-a599-4c4e-a598-41fa7ccfb076</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

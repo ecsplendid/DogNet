@@ -50,8 +50,6 @@ namespace ImageWorld.Core.Helpers
             if (firstOrDefault != null)
                 image.PredictedCaption = firstOrDefault.Text;
             
-            Console.Write($"Adorned image tags to it from cognitive services ({string.Join(",", image.Tags)})");
-
             DocumentDbHelper
                 .UpdateImageAsync(image)
                 .Wait();

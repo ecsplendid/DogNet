@@ -15,7 +15,7 @@ namespace ImageWorld.Core.Class
         public string Description { get; set; }
         public string[] Tags { get; set; }
         public string PredictedCaption { get; set; }
-        public bool ProfanityDetected { get; set; }
+        public bool WaldoDetected { get; set; }
         public bool IllegalWatermark { get; set; }
         public byte[] Bytes { get; set; }
         [JsonProperty(PropertyName = "id")]
