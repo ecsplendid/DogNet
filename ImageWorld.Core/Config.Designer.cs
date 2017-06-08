@@ -12,7 +12,7 @@ namespace ImageWorld.Core {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.3.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.1.0.0")]
     public sealed partial class Config : global::System.Configuration.ApplicationSettingsBase {
         
         private static Config defaultInstance = ((Config)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Config())));
@@ -86,6 +86,24 @@ namespace ImageWorld.Core {
         public string VisionBaseAddress {
             get {
                 return ((string)(this["VisionBaseAddress"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("5e869f76b47943a2a7406eb55b3057dd")]
+        public string CustomVisionPredictionKey {
+            get {
+                return ((string)(this["CustomVisionPredictionKey"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10358a1a-a599-4c4e-a598-41fa7ccfb076")]
+        public string CustomVisionIterationId {
+            get {
+                return ((string)(this["CustomVisionIterationId"]));
             }
         }
     }

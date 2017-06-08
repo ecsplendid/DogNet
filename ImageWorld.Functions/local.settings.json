@@ -1,7 +1,7 @@
 {
   "IsEncrypted": false,
   "Values": {
-    "AzureWebJobsServiceBusConnection": "Endpoint=sb://hsbc-china-queue.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=WexAvgOqzZ01Tn7sy8fkWIRA/cLYjZV08c1/7hNiTTg=",
+    "ServiceBusConnection": "Endpoint=sb://hsbc-china-queue.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=WexAvgOqzZ01Tn7sy8fkWIRA/cLYjZV08c1/7hNiTTg=",
     "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;AccountName=hsbcimagefunctionstorage;AccountKey=mN4HNBqgOGkYzfO0pBCa8GgPa8PUe5TdNpD+1rOQcb2K3N9o9reSNcWX8jWcmLHTq5bAsSR3skgIXAHJnRDEgg==;EndpointSuffix=core.windows.net",
     "AzureWebJobsDashboard": ""
   }
