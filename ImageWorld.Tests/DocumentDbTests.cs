@@ -17,17 +17,16 @@ namespace ImageWorld.Tests
     public class DocumentDbTests
     {
         /// <summary>
-        /// see 
-        /// https://stackoverflow.com/questions/858761/what-causing-this-invalid-length-for-a-base-64-char-array
+        /// Test creation of an image in docdb, retrieval, updating, deleting
         /// </summary>
-        /// <returns></returns>
         [TestMethod]
-        public void PutImageInDocumentDb()
+        public void TestDocumentDbWrangling()
         {
             var newGuid = Guid.NewGuid();
 
             var image = new Image
             {
+                Created = DateTime.Now,
                 Description = "Test description",
                 Id = newGuid,
                 Name = "Test name",
@@ -35,9 +34,49 @@ namespace ImageWorld.Tests
                 Bytes = File.ReadAllBytes("Images/dog-medium-landing-hero.jpg")
             };
 
+            Console.WriteLine($"{newGuid} written to database!");
+
             DocumentDbHelper.AddImageToDbAsync(
                 image
             ).Wait();
+
+            // get the image back
+            var imageBack = DocumentDbHelper
+                .GetImageAsync($"{newGuid}")
+                .Result;
+
+            imageBack.Created = DateTime.Now;
+            imageBack.IllegalWatermark = true;
+
+            // change date and update the image
+            DocumentDbHelper
+                .UpdateImageAsync(imageBack)
+                .Wait();
+
+            // delete the image
+            // get the image back
+            DocumentDbHelper
+                .DeleteImageAsync($"{newGuid}").Wait();
+            
         }
-    }
+
+        [TestMethod]
+        public void CreateImageOnly()
+        {
+            var newGuid = Guid.NewGuid();
+
+            var image = new Image
+            {
+                Created = DateTime.Now,
+                Description = "Test description",
+                Id = newGuid,
+                Name = "Test name",
+                // use our fluffy test image
+                Bytes = File.ReadAllBytes("Images/dog-medium-landing-hero.jpg")
+            };
+
+            Console.WriteLine($"{newGuid} written to database!");
+
+        }
+        }
 }

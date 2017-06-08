@@ -8,14 +8,15 @@ namespace ImageWorld.Core.Class
     /// </summary>
     public class Image
     {
+        public bool ProcessedCognitiveServices { get; set; }
+        public bool ProcessedAzureMachineLearning { get; set; }
+        public DateTime Created { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        /// <summary>
-        /// base64 encoded binary string
-        /// I tried using byte[] and got 
-        /// System.FormatException: Invalid length for a Base-64 char array or string.
-        /// when uploading to DocDB
-        /// </summary>
+        public string[] Tags { get; set; }
+        public string PredictedCaption { get; set; }
+        public bool ProfanityDetected { get; set; }
+        public bool IllegalWatermark { get; set; }
         public byte[] Bytes { get; set; }
         [JsonProperty(PropertyName = "id")]
         public Guid Id { get; set; }

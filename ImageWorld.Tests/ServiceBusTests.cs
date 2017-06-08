@@ -10,7 +10,7 @@ namespace ImageWorld.Tests
     {
         [TestMethod]
         public void PutMessageOnServiceBus() => ServiceBusHelper
-                .AddMessageToQueueAsync($"Test message from unit test!")
+                .AddMessageToQueueAsync($"7d66b256-7324-4acf-8d6d-9c394da56686")
                 .Wait();
     }
 }
