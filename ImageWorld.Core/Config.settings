@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ImageWorld.Core" GeneratedClassName="Config">
+  <Profiles />
+  <Settings>
+    <Setting Name="ServiceBusConnectionString" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Endpoint=sb://hsbc-china-queue.servicebus.windows.net/;SharedAccessKeyName=basicPolicy;SharedAccessKey=lFj2DETk0R6jrN2r3aL3nXMGIGgvJ1pYLHmOMERMSb8=;EntityPath=Images</Value>
+    </Setting>
+    <Setting Name="DocDbEndpointUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://hsbc-image-database.documents.azure.com:443/</Value>
+    </Setting>
+    <Setting Name="DocDbKey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Jvx9ScleKSWy0hQrBp3kGsqKryNoAXmBhfMQIYFzBHzpcHgUNTGGjpEmAhqheizy2v0c2SxIpWmrLYFdlzhb2g</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
