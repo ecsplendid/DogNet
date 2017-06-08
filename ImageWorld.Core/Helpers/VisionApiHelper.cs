@@ -15,32 +15,46 @@ namespace ImageWorld.Core.Helpers
         /// <summary>
         /// Goto cognitive services and get the image metadata
         /// </summary>
-        public static async void AdornImageWithVisionMetadataAsync(Image image)
+        public static void AdornImageWithVisionMetadataAsync(Image image)
         {
             var visionClient = new VisionServiceClient(
-                "7713f8479f4941d6a42ff988ceff2b28",
-                "https://southeastasia.api.cognitive.microsoft.com/vision/v1.0"
+                Config.Default.VisionApiKey,
+                Config.Default.VisionBaseAddress
                 );
 
             var visualFeatures = new []
             {
-                VisualFeature.Tags
-            };
+                VisualFeature.Tags, VisualFeature.Description
+            }; 
             
             var analysisResult = 
-                await visionClient.AnalyzeImageAsync(
+                visionClient.AnalyzeImageAsync(
                     new MemoryStream(image.Bytes), visualFeatures
-                    );
+                    ).Result;
 
-            image.Tags = analysisResult
-                .Tags
-                .Select( t => t.Name )
-                .ToArray();
+            if (analysisResult.Tags != null
+                && analysisResult.Tags.Any())
+            {
+                image.Tags = analysisResult
+                    .Tags
+                    .Select(t => t.Name)
+                    .ToArray();
+            }
+
+            var firstOrDefault = analysisResult
+                .Description
+                .Captions
+                .FirstOrDefault();
+
+            // add in the image caption
+            if (firstOrDefault != null)
+                image.PredictedCaption = firstOrDefault.Text;
+            
+            Console.Write($"Adorned image tags to it from cognitive services ({string.Join(",", image.Tags)})");
 
             DocumentDbHelper
                 .UpdateImageAsync(image)
                 .Wait();
         }
-
     }
 }

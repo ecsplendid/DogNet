@@ -79,5 +79,14 @@ namespace ImageWorld.Core {
                 return ((string)(this["VisionApiKey"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://southeastasia.api.cognitive.microsoft.com/vision/v1.0")]
+        public string VisionBaseAddress {
+            get {
+                return ((string)(this["VisionBaseAddress"]));
+            }
+        }
     }
 }

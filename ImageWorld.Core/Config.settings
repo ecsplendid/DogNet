@@ -20,5 +20,8 @@
     <Setting Name="VisionApiKey" Type="System.String" Scope="Application">
       <Value Profile="(Default)">94b9defab2d447f8ab6c95cbca04b075</Value>
     </Setting>
+    <Setting Name="VisionBaseAddress" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://southeastasia.api.cognitive.microsoft.com/vision/v1.0</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -61,11 +61,10 @@ namespace ImageWorld.Tests
             // get the image back
             DocumentDbHelper
                 .DeleteImageAsync($"{newGuid}").Wait();
-            
         }
 
         [TestMethod]
-        public void CreateImageOnly()
+        public void CreateImageOnlyWithQueue()
         {
             var newGuid = Guid.NewGuid();
 
@@ -79,8 +78,17 @@ namespace ImageWorld.Tests
                 Bytes = File.ReadAllBytes("Images/dog-medium-landing-hero.jpg")
             };
 
+            DocumentDbHelper.AddImageToDbAsync(
+                image
+            ).Wait();
+
             Console.WriteLine($"{newGuid} written to database!");
 
+            ServiceBusHelper
+                .AddMessageToQueueAsync($"{image.Id}")
+                .Wait();
+
+            Console.WriteLine($"{newGuid} written to service bus!");
         }
-        }
+    }
 }

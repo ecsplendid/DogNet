@@ -32,19 +32,34 @@ namespace ImageWorld.Core.Helpers
                 ), image, 
                 new RequestOptions { PartitionKey = new PartitionKey($"{image.Id}") });
         }
-
+        
+        /// <summary>
+        /// return null if not found
+        /// </summary>
+        /// <param name="imageGuid"></param>
+        /// <returns></returns>
         public static async Task<Image> GetImageAsync(string imageGuid)
         {
             var docDbClient = GetDocDbClient();
-           
-            return await docDbClient
-                .ReadDocumentAsync<Image>(
-                    UriFactory.CreateDocumentUri(
-                        Config.Default.DocDbName, 
-                        Config.Default.DocDbCollectionName,
-                        imageGuid),
-                        new RequestOptions { PartitionKey = new PartitionKey(imageGuid) }
-                        );
+
+            // I hate that they force me to use try-catch because no exists() api
+            // not impressed
+            try
+            {
+                return await docDbClient
+                    .ReadDocumentAsync<Image>(
+                        UriFactory.CreateDocumentUri(
+                            Config.Default.DocDbName,
+                            Config.Default.DocDbCollectionName,
+                            imageGuid),
+                        new RequestOptions {PartitionKey = new PartitionKey(imageGuid)}
+                    );
+            }
+
+            catch(DocumentClientException)
+            {
+                return null;
+            }
         }
 
         public static async Task DeleteImageAsync(string imageGuid)

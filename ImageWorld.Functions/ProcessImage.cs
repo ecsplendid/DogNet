@@ -1,4 +1,5 @@
 using System.IO;
+using ImageWorld.Core.Helpers;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Host;
 using Microsoft.ServiceBus.Messaging;
@@ -10,22 +11,30 @@ namespace ImageWorld.Functions
         [FunctionName("ServiceBusQueueTriggerCSharp")]                    
         public static void Run(
             [ServiceBusTrigger("images", AccessRights.Manage, Connection = "ServiceBusConnection")]
-            string guid, TraceWriter log)
+            string imageId, TraceWriter log)
         {
-            log.Info($"C# ServiceBus queue trigger function processed message: {guid}");
+            
+            log.Info($"New image detected from the queue: {imageId}");
 
-            // 7d66b256-7324-4acf-8d6d-9c394da56686
+            var image = DocumentDbHelper
+                .GetImageAsync($"{imageId}").Result;
 
-            // get the image from docdb
+            // if we can't find it in the database, do nothing
+            if (image == null)
+            {
+                log.Info($"This image wasn't found in the database.");
+                return;
+            }
 
-            // send it to cognitive services
+            VisionApiHelper
+                .AdornImageWithVisionMetadataAsync(
+                    image
+                    );
 
-            // adorn the metadata to the doc
+            if (image.Tags == null) return;
 
-            // send it back into docdb
-
-
-
+            log.Info($"Adorned image tags to it from cognitive services ({string.Join(",", image.Tags)})");
+            log.Info($"And this description: ({image.PredictedCaption})");
         }
     }
 }
