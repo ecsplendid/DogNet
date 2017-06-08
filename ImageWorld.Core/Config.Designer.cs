@@ -25,31 +25,10 @@ namespace ImageWorld.Core {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Endpoint=sb://hsbc-china-queue.servicebus.windows.net/;SharedAccessKeyName=basicP" +
-            "olicy;SharedAccessKey=lFj2DETk0R6jrN2r3aL3nXMGIGgvJ1pYLHmOMERMSb8=;EntityPath=Im" +
-            "ages")]
-        public string ServiceBusConnectionString {
-            get {
-                return ((string)(this["ServiceBusConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("https://hsbc-image-database.documents.azure.com:443/")]
         public string DocDbEndpointUrl {
             get {
                 return ((string)(this["DocDbEndpointUrl"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Jvx9ScleKSWy0hQrBp3kGsqKryNoAXmBhfMQIYFzBHzpcHgUNTGGjpEmAhqheizy2v0c2SxIpWmrLYFdl" +
-            "zhb2g==")]
-        public string DocDbKey {
-            get {
-                return ((string)(this["DocDbKey"]));
             }
         }
         
@@ -68,6 +47,36 @@ namespace ImageWorld.Core {
         public string DocDbCollectionName {
             get {
                 return ((string)(this["DocDbCollectionName"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Endpoint=sb://hsbc-china-queue.servicebus.windows.net/;SharedAccessKeyName=basicP" +
+            "olicy;SharedAccessKey=lFj2DETk0R6jrN2r3aL3nXMGIGgvJ1pYLHmOMERMSb8=;EntityPath=Im" +
+            "ages")]
+        public string ServiceBusConnectionString {
+            get {
+                return ((string)(this["ServiceBusConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Jvx9ScleKSWy0hQrBp3kGsqKryNoAXmBhfMQIYFzBHzpcHgUNTGGjpEmAhqheizy2v0c2SxIpWmrLYFdl" +
+            "zhb2g==")]
+        public string DocDbKey {
+            get {
+                return ((string)(this["DocDbKey"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("94b9defab2d447f8ab6c95cbca04b075")]
+        public string VisionApiKey {
+            get {
+                return ((string)(this["VisionApiKey"]));
             }
         }
     }

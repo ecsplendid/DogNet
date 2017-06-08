@@ -53,6 +53,10 @@ namespace ImageWorld.Tests
                 .UpdateImageAsync(imageBack)
                 .Wait();
 
+            // can we call out to cognitive services?
+            VisionApiHelper
+                .AdornImageWithVisionMetadataAsync(imageBack);
+            
             // delete the image
             // get the image back
             DocumentDbHelper
