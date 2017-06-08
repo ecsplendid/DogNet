@@ -9,12 +9,8 @@ namespace ImageWorld.Tests
     public class ServiceBusTests
     {
         [TestMethod]
-        public void PutMessageOnServiceBus()
-        {
-            ServiceBusHelper
+        public void PutMessageOnServiceBus() => ServiceBusHelper
                 .AddMessageToQueueAsync($"Test message from unit test!")
                 .Wait();
-
-        }
     }
 }
