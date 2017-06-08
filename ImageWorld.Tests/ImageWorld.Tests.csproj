@@ -51,6 +51,7 @@
     <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomVisionTests.cs" />
     <Compile Include="DocumentDbTests.cs" />
     <Compile Include="ServiceBusTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

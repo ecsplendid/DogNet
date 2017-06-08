@@ -12,8 +12,6 @@ namespace ImageWorld.ConsoleDriver
         static void Main(string[] args)
         {
             new DocumentDbTests().CreateImageOnlyWithQueue();
-            
-
         }
     }
 }

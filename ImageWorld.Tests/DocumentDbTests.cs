@@ -8,7 +8,6 @@ using System.Web;
 using ImageWorld.Core;
 using ImageWorld.Core.Class;
 using ImageWorld.Core.Helpers;
-using Microsoft.Azure.Documents.Client;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace ImageWorld.Tests
@@ -48,15 +47,19 @@ namespace ImageWorld.Tests
             imageBack.Created = DateTime.Now;
             imageBack.IllegalWatermark = true;
 
+            // Run the custom vision service
+            CustomerVisionHelper
+                .RunCustomVisionService(imageBack);
+
+            // can we call out to cognitive services?
+            VisionApiHelper
+                .AdornImageWithVisionMetadataAsync(imageBack);
+
             // change date and update the image
             DocumentDbHelper
                 .UpdateImageAsync(imageBack)
                 .Wait();
 
-            // can we call out to cognitive services?
-            VisionApiHelper
-                .AdornImageWithVisionMetadataAsync(imageBack);
-            
             // delete the image
             // get the image back
             DocumentDbHelper

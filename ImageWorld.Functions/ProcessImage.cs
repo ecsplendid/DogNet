@@ -33,7 +33,11 @@ namespace ImageWorld.Functions
 
             CustomerVisionHelper
                 .RunCustomVisionService(image);
-            
+
+            DocumentDbHelper
+                .UpdateImageAsync(image)
+                .Wait();
+
             if (image.Tags == null) return;
 
             log.Info($"Adorned image tags to it from cognitive services ({string.Join(",", image.Tags)})");

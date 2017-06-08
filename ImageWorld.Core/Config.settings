@@ -12,7 +12,7 @@
       <Value Profile="(Default)">Images</Value>
     </Setting>
     <Setting Name="ServiceBusConnectionString" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">Endpoint=sb://hsbc-china-queue.servicebus.windows.net/;SharedAccessKeyName=basicPolicy;SharedAccessKey=lFj2DETk0R6jrN2r3aL3nXMGIGgvJ1pYLHmOMERMSb8=;EntityPath=Images</Value>
+      <Value Profile="(Default)">Endpoint=sb://hsbc-china-queue.servicebus.windows.net/;SharedAccessKeyName=all;SharedAccessKey=qlsBFTwzYAzXuPPVreuussQDGDcE5s/4lF4F0iwc0IU=;EntityPath=images</Value>
     </Setting>
     <Setting Name="DocDbKey" Type="System.String" Scope="Application">
       <Value Profile="(Default)">Jvx9ScleKSWy0hQrBp3kGsqKryNoAXmBhfMQIYFzBHzpcHgUNTGGjpEmAhqheizy2v0c2SxIpWmrLYFdlzhb2g==</Value>
@@ -28,6 +28,9 @@
     </Setting>
     <Setting Name="CustomVisionIterationId" Type="System.String" Scope="Application">
       <Value Profile="(Default)">10358a1a-a599-4c4e-a598-41fa7ccfb076</Value>
+    </Setting>
+    <Setting Name="CustomVisionProjectId" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">2a4361c4-a9a2-4fcc-8309-c3fa4212a36b</Value>
     </Setting>
   </Settings>
 </SettingsFile>

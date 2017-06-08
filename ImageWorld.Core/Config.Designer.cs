@@ -12,7 +12,7 @@ namespace ImageWorld.Core {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.1.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.3.0.0")]
     public sealed partial class Config : global::System.Configuration.ApplicationSettingsBase {
         
         private static Config defaultInstance = ((Config)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Config())));
@@ -52,9 +52,8 @@ namespace ImageWorld.Core {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Endpoint=sb://hsbc-china-queue.servicebus.windows.net/;SharedAccessKeyName=basicP" +
-            "olicy;SharedAccessKey=lFj2DETk0R6jrN2r3aL3nXMGIGgvJ1pYLHmOMERMSb8=;EntityPath=Im" +
-            "ages")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Endpoint=sb://hsbc-china-queue.servicebus.windows.net/;SharedAccessKeyName=all;Sh" +
+            "aredAccessKey=qlsBFTwzYAzXuPPVreuussQDGDcE5s/4lF4F0iwc0IU=;EntityPath=images")]
         public string ServiceBusConnectionString {
             get {
                 return ((string)(this["ServiceBusConnectionString"]));
@@ -104,6 +103,15 @@ namespace ImageWorld.Core {
         public string CustomVisionIterationId {
             get {
                 return ((string)(this["CustomVisionIterationId"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2a4361c4-a9a2-4fcc-8309-c3fa4212a36b")]
+        public string CustomVisionProjectId {
+            get {
+                return ((string)(this["CustomVisionProjectId"]));
             }
         }
     }

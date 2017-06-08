@@ -8,6 +8,7 @@ namespace ImageWorld.Core.Class
     /// </summary>
     public class Image
     {
+        public bool ProcessedCustomVision { get; set; }
         public bool ProcessedCognitiveServices { get; set; }
         public bool ProcessedAzureMachineLearning { get; set; }
         public DateTime Created { get; set; }

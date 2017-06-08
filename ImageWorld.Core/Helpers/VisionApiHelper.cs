@@ -49,10 +49,8 @@ namespace ImageWorld.Core.Helpers
             // add in the image caption
             if (firstOrDefault != null)
                 image.PredictedCaption = firstOrDefault.Text;
-            
-            DocumentDbHelper
-                .UpdateImageAsync(image)
-                .Wait();
+
+            image.ProcessedCognitiveServices = true;
         }
     }
 }

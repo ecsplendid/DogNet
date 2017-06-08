@@ -18,10 +18,12 @@ namespace ImageWorld.Core.Helpers
                 );
 
             var endpoint = new PredictionEndpoint(predictionEndpointCredentials);
+            
 
             var result = endpoint.PredictImage(
-                new Guid(Config.Default.CustomVisionIterationId),
-                new MemoryStream(image.Bytes));
+                new Guid(Config.Default.CustomVisionProjectId),
+                new MemoryStream(image.Bytes), 
+                new Guid(Config.Default.CustomVisionIterationId));
 
             var waldo = result
                 .Predictions
@@ -32,10 +34,7 @@ namespace ImageWorld.Core.Helpers
                 image.WaldoDetected = true;
             }
 
-            DocumentDbHelper
-                .UpdateImageAsync(image)
-                .Wait();
+            image.ProcessedCustomVision = true;
         }
-
     }
 }
