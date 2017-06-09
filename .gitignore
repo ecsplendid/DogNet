@@ -5,41 +5,41 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
-ImageWorld.WebApp/dist
-ImageWorld.WebApp/tmp
-ImageWorld.WebApp/out-tsc
+/dist
+/tmp
+/out-tsc
 
 # dependencies
-ImageWorld.WebApp/node_modules
+/node_modules
 
 # IDEs and editors
-ImageWorld.WebApp/.idea
-ImageWorld.WebApp.project
-ImageWorld.WebApp.classpath
-ImageWorld.WebApp.c9/
+/.idea
+.project
+.classpath
+.c9/
 *.launch
-ImageWorld.WebApp.settings/
+.settings/
 *.sublime-workspace
 
 # IDE - VSCode
-ImageWorld.WebApp.vscode/*
-ImageWorld.WebApp!.vscode/settings.json
-ImageWorld.WebApp!.vscode/tasks.json
-ImageWorld.WebApp!.vscode/launch.json
-ImageWorld.WebApp!.vscode/extensions.json
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 
 # misc
-ImageWorld.WebApp/.sass-cache
-ImageWorld.WebApp/connect.lock
-ImageWorld.WebApp/coverage
-ImageWorld.WebApp/libpeerconnection.log
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
 npm-debug.log
 testem.log
-ImageWorld.WebApp/typings
+/typings
 
 # e2e
-ImageWorld.WebApp/e2e/*.js
-ImageWorld.WebApp/e2e/*.map
+e2e/*.js
+e2e/*.map
 
 # System Files
 .DS_Store
