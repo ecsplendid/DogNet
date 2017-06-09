@@ -5,41 +5,41 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
-/ImageWorld.WebApp/dist
-/ImageWorld.WebApp/tmp
-/ImageWorld.WebApp/out-tsc
+ImageWorld.WebApp/dist
+ImageWorld.WebApp/tmp
+ImageWorld.WebApp/out-tsc
 
 # dependencies
-/ImageWorld.WebApp/node_modules
+ImageWorld.WebApp/node_modules
 
 # IDEs and editors
-/ImageWorld.WebApp/.idea
-/ImageWorld.WebApp.project
-/ImageWorld.WebApp.classpath
-/ImageWorld.WebApp.c9/
+ImageWorld.WebApp/.idea
+ImageWorld.WebApp.project
+ImageWorld.WebApp.classpath
+ImageWorld.WebApp.c9/
 *.launch
-/ImageWorld.WebApp.settings/
+ImageWorld.WebApp.settings/
 *.sublime-workspace
 
 # IDE - VSCode
-/ImageWorld.WebApp.vscode/*
-/ImageWorld.WebApp!.vscode/settings.json
-/ImageWorld.WebApp!.vscode/tasks.json
-/ImageWorld.WebApp!.vscode/launch.json
-/ImageWorld.WebApp!.vscode/extensions.json
+ImageWorld.WebApp.vscode/*
+ImageWorld.WebApp!.vscode/settings.json
+ImageWorld.WebApp!.vscode/tasks.json
+ImageWorld.WebApp!.vscode/launch.json
+ImageWorld.WebApp!.vscode/extensions.json
 
 # misc
-/ImageWorld.WebApp/.sass-cache
-/ImageWorld.WebApp/connect.lock
-/ImageWorld.WebApp/coverage
-/ImageWorld.WebApp/libpeerconnection.log
+ImageWorld.WebApp/.sass-cache
+ImageWorld.WebApp/connect.lock
+ImageWorld.WebApp/coverage
+ImageWorld.WebApp/libpeerconnection.log
 npm-debug.log
 testem.log
-/ImageWorld.WebApp/typings
+ImageWorld.WebApp/typings
 
 # e2e
-/ImageWorld.WebApp/e2e/*.js
-/ImageWorld.WebApp/e2e/*.map
+ImageWorld.WebApp/e2e/*.js
+ImageWorld.WebApp/e2e/*.map
 
 # System Files
 .DS_Store
