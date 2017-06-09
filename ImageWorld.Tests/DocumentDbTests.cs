@@ -66,6 +66,18 @@ namespace ImageWorld.Tests
         }
 
         [TestMethod]
+        public void GetImage()
+        {
+            var bytes = DocumentDbHelper
+                .GetImageAsync("5f34f4d0-8f0c-4b95-9b86-64bba863f74a")
+                .Result
+                .Bytes;
+
+
+        }
+
+
+        [TestMethod]
         public void CreateImageOnlyWithQueue()
         {
             var newGuid = Guid.NewGuid();
