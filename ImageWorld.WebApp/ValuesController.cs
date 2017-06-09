@@ -15,7 +15,7 @@ namespace ImageWorld.WebApp
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            return new string[] { "Hello", "World" };
+            return new string[] { "Hello", "World", "And again" };
         }
 
         // GET api/values/5
