@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Threading.Tasks;
 using System.Web.Http;
 using ImageWorld.Core.Helpers;
 using Swashbuckle.Swagger.Annotations;
@@ -18,11 +19,10 @@ namespace ImageWorld.ApiApp.Controllers
         [SwaggerOperation("GetById")]
         [SwaggerResponse(HttpStatusCode.OK)]
         [SwaggerResponse(HttpStatusCode.NotFound)]
-        public HttpResponseMessage Get(string id)
+        public async Task<HttpResponseMessage> Get(string id)
         {
-            var image = DocumentDbHelper
-                .GetImageAsync(id)
-                .Result;
+            var image = await DocumentDbHelper
+                .GetImageAsync(id);
 
             if (image == null)
                 return new HttpResponseMessage(HttpStatusCode.NotFound);
@@ -31,6 +31,12 @@ namespace ImageWorld.ApiApp.Controllers
             {
                 Content = new ByteArrayContent(image.Bytes)
             };
+            
+            result.Headers.CacheControl = new CacheControlHeaderValue
+                {
+                    Public = true,
+                    MaxAge = TimeSpan.FromMinutes(30)
+                }; ;
 
             result.Content.Headers.ContentType = 
                 // bit of an assumption but will suffice for the demo
