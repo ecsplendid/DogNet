@@ -23,7 +23,7 @@ namespace ImageWorld.Tests
             {
                 Created = DateTime.Now,
                 Description = "Test description",
-                Id = newGuid,
+                id = newGuid,
                 Name = "Test name",
                 // use our fluffy test image
                 Bytes = File.ReadAllBytes("Images/dog-medium-landing-hero.jpg")

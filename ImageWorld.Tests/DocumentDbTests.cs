@@ -27,7 +27,7 @@ namespace ImageWorld.Tests
             {
                 Created = DateTime.Now,
                 Description = "Test description",
-                Id = newGuid,
+                id = newGuid,
                 Name = "Test name",
                 // use our fluffy test image
                 Bytes = File.ReadAllBytes("Images/dog-medium-landing-hero.jpg")
@@ -48,17 +48,16 @@ namespace ImageWorld.Tests
             imageBack.IllegalWatermark = true;
 
             // Run the custom vision service
-            CustomerVisionHelper
-                .RunCustomVisionService(imageBack);
-
+            //CustomerVisionHelper
+            //    .RunCustomVisionService(imageBack);
+            
             // can we call out to cognitive services?
             VisionApiHelper
                 .AdornImageWithVisionMetadataAsync(imageBack);
 
             // change date and update the image
             DocumentDbHelper
-                .UpdateImageAsync(imageBack)
-                .Wait();
+                .UpdateImage(imageBack);
 
             // delete the image
             // get the image back
@@ -75,7 +74,7 @@ namespace ImageWorld.Tests
             {
                 Created = DateTime.Now,
                 Description = "Test description",
-                Id = newGuid,
+                id = newGuid,
                 Name = "Test name",
                 // use our fluffy test image
                 Bytes = File.ReadAllBytes("Images/dog-medium-landing-hero.jpg")
@@ -88,7 +87,7 @@ namespace ImageWorld.Tests
             Console.WriteLine($"{newGuid} written to database!");
 
             ServiceBusHelper
-                .AddMessageToQueueAsync($"{image.Id}")
+                .AddMessageToQueueAsync($"{image.id}")
                 .Wait();
 
             Console.WriteLine($"{newGuid} written to service bus!");

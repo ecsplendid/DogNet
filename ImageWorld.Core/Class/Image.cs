@@ -20,7 +20,7 @@ namespace ImageWorld.Core.Class
         public bool IllegalWatermark { get; set; }
         public byte[] Bytes { get; set; }
         [JsonProperty(PropertyName = "id")]
-        public Guid Id { get; set; }
+        public Guid id { get; set; }
         public override string ToString()
         {
             return JsonConvert.SerializeObject(this);

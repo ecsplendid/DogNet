@@ -20,17 +20,17 @@ namespace ImageWorld.Core.Helpers
                image);
         }
 
-        public static async Task<Document> UpdateImageAsync(Image image)
+        public static Document UpdateImage(Image image)
         {
             var docDbClient = GetDocDbClient();
 
-            return await docDbClient.ReplaceDocumentAsync(
+            return docDbClient.ReplaceDocumentAsync(
                 UriFactory.CreateDocumentUri(
                     Config.Default.DocDbName,
                     Config.Default.DocDbCollectionName,
-                    $"{image.Id}"
-                ), image, 
-                new RequestOptions { PartitionKey = new PartitionKey($"{image.Id}") });
+                    $"{image.id}"
+                ), image)
+                .Result;
         }
         
         /// <summary>
@@ -42,8 +42,7 @@ namespace ImageWorld.Core.Helpers
         {
             var docDbClient = GetDocDbClient();
 
-            // I hate that they force me to use try-catch because no exists() api
-            // not impressed
+            // I hate that they force you to use try-catch because no exists() api
             try
             {
                 return await docDbClient
@@ -51,8 +50,7 @@ namespace ImageWorld.Core.Helpers
                         UriFactory.CreateDocumentUri(
                             Config.Default.DocDbName,
                             Config.Default.DocDbCollectionName,
-                            imageGuid),
-                        new RequestOptions {PartitionKey = new PartitionKey(imageGuid)}
+                            imageGuid)
                     );
             }
 
@@ -71,8 +69,7 @@ namespace ImageWorld.Core.Helpers
                     UriFactory.CreateDocumentUri(
                         Config.Default.DocDbName,
                         Config.Default.DocDbCollectionName,
-                        imageGuid
-                        ), new RequestOptions { PartitionKey = new PartitionKey(imageGuid) }
+                        imageGuid)
                 );
         }
 

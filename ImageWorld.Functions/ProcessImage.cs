@@ -35,8 +35,7 @@ namespace ImageWorld.Functions
                 .RunCustomVisionService(image);
 
             DocumentDbHelper
-                .UpdateImageAsync(image)
-                .Wait();
+                .UpdateImage(image);
 
             if (image.Tags == null) return;
 
