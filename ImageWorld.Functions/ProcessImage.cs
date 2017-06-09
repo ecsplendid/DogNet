@@ -34,6 +34,10 @@ namespace ImageWorld.Functions
             CustomerVisionHelper
                 .RunCustomVisionService(image);
 
+            // insert azureML code here
+
+
+
             DocumentDbHelper
                 .UpdateImage(image);
 

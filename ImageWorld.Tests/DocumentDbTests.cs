@@ -72,11 +72,14 @@ namespace ImageWorld.Tests
                 .GetImageAsync("5f34f4d0-8f0c-4b95-9b86-64bba863f74a")
                 .Result
                 .Bytes;
-
-
         }
 
-
+        [TestMethod]
+        public void GetAllImageIds()
+        {
+            Console.Write( string.Join(",", DocumentDbHelper.GetAllImageIds() ) );
+        }
+        
         [TestMethod]
         public void CreateImageOnlyWithQueue()
         {

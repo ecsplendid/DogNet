@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using ImageWorld.Core.Class;
 using Microsoft.Azure.Documents;
@@ -32,7 +34,29 @@ namespace ImageWorld.Core.Helpers
                 ), image)
                 .Result;
         }
-        
+
+        private class IdOnly
+        {
+            public string id { get; set; }
+        }
+
+        public static IEnumerable<string> GetAllImageIds()
+        {
+            var docDbClient = GetDocDbClient();
+
+            var allImageIds = docDbClient
+                .CreateDocumentQuery<IdOnly>(
+                    UriFactory.CreateDocumentCollectionUri(
+                        Config.Default.DocDbName,
+                        Config.Default.DocDbCollectionName),
+                    "SELECT c.id AS id FROM c")
+                .ToList()
+                .Select(r => r.id);
+                
+
+            return allImageIds;
+        }
+
         /// <summary>
         /// return null if not found
         /// </summary>

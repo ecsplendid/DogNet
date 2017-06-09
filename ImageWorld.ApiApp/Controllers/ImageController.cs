@@ -15,11 +15,10 @@ namespace ImageWorld.ApiApp.Controllers
 {
     public class ImageController : ApiController
     {
-     
         [SwaggerOperation("GetById")]
         [SwaggerResponse(HttpStatusCode.OK)]
         [SwaggerResponse(HttpStatusCode.NotFound)]
-        public async Task<HttpResponseMessage> Get(string id)
+        public async Task<HttpResponseMessage> GetById(string id)
         {
             var image = await DocumentDbHelper
                 .GetImageAsync(id);
@@ -44,5 +43,18 @@ namespace ImageWorld.ApiApp.Controllers
 
             return result;
         }
+
+        [SwaggerOperation("GetImages")]
+        [Route("api/Image/GetImages")]
+        [SwaggerResponse(HttpStatusCode.OK)]
+        public IHttpActionResult GetImages()
+        {
+            var image = DocumentDbHelper
+                .GetAllImageIds()
+                .Select( s => $"http://hsbc-api-app.azurewebsites.net/api/Image/GetById/?id={s}" );
+            
+            return Ok(image);
+        }
+
     }
 }

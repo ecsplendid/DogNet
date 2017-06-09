@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,7 +15,7 @@ namespace ImageWorld.WebApp
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            return new string[] { "Hello", "World", "And again" };
+            return new string[] { "Hello", "World", "And again", "Laurent" };
         }
 
         // GET api/values/5
