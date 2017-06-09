@@ -314,3 +314,5 @@ __pycache__/
 ImageWorld.Core/app.config
 ImageWorld.Core/app.config
 ImageWorld.Core/app.config
+ImageWorld.WebApp/e2e/*
+ImageWorld.WebApp/wwwroot/*
