@@ -61,15 +61,13 @@ namespace ImageWorld.ApiApp.Controllers
         }
 
         [Route("api/Image/upload")]
-        [System.Web.Http.HttpPost]
-        [System.Web.Http.AcceptVerbs("POST")]
-        public async void UploadSingleFile()
-        {
-            var request = HttpContext.Current.Request;
-
+        [HttpPost]
+        [AcceptVerbs("POST")]
+        public async void UploadSingleFile([FromBody] HttpPostedFileBase uploadFile)
+        { 
             using (var ms = new MemoryStream())
             {
-                request.InputStream.CopyTo(ms);
+                uploadFile.InputStream.CopyTo(ms);
 
                 var bytes = ms.ToArray();
 

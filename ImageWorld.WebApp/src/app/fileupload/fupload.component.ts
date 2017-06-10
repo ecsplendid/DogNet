@@ -25,8 +25,7 @@ export class SimpleFileUploader {
       let formData: FormData = new FormData();
       formData.append('uploadFile', file, file.name);
       let headers = new Headers();
-      headers.append('Content-Type', 'multipart/form-data');
-      headers.append('Accept', 'application/json');
+      headers.append('Content-Type', null);
       let options = new RequestOptions();
       options.headers = headers;
       this.uploading = true;
