@@ -1,13 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Web;
 using System.Web.Http;
+using ImageWorld.Core.Class;
 using ImageWorld.Core.Helpers;
 using Swashbuckle.Swagger.Annotations;
 
@@ -54,6 +58,28 @@ namespace ImageWorld.ApiApp.Controllers
                 .Select( s => $"http://hsbc-api-app.azurewebsites.net/api/Image/GetById/?id={s}" );
             
             return Ok(image);
+        }
+
+        [Route("api/Image/upload")]
+        [System.Web.Http.HttpPost]
+        [System.Web.Http.AcceptVerbs("POST")]
+        public async void UploadSingleFile()
+        {
+            var request = HttpContext.Current.Request;
+
+            using (var ms = new MemoryStream())
+            {
+                request.InputStream.CopyTo(ms);
+
+                var bytes = ms.ToArray();
+
+                await DocumentDbHelper.AddImageToDbAsync(new Core.Class.Image
+                {
+                    id = Guid.NewGuid(),
+                    Bytes = bytes
+                });
+            }
+
         }
 
     }

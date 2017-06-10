@@ -19,8 +19,6 @@ namespace ImageWorld.ApiApp
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
-
-
             );
 
             config.Formatters.JsonFormatter.SupportedMediaTypes
