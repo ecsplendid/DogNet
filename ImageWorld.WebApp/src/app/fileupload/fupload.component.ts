@@ -12,7 +12,7 @@ export class SimpleFileUploader {
 
   constructor(private httpService: Http) { }
 
-  apiEndPoint: string = "http://hsbc-api-app.azurewebsites.net/api/Image/api/";
+  apiEndPoint: string = "http://localhost:60133/api/Image/upload";
 
   public uploading: boolean;
   public completed: boolean;
@@ -22,14 +22,13 @@ export class SimpleFileUploader {
     let fileList: FileList = event.target.files;
     if (fileList.length > 0) {
       let file: File = fileList[0];
-      let formData: FormData = new FormData();
-      formData.append('uploadFile', file, file.name);
       let headers = new Headers();
-      headers.append('Content-Type', null);
+      headers.append('Content-Type', 'multipart/form-data');
+      headers.append('Accept', 'application/json');
       let options = new RequestOptions();
       options.headers = headers;
       this.uploading = true;
-      this.httpService.post(`${this.apiEndPoint}`, formData, options)
+      this.httpService.post(`${this.apiEndPoint}`, file, options)
         .map(res => res.json())
         .catch(error => Observable.throw(error))
         .subscribe(

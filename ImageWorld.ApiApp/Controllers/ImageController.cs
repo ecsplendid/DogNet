@@ -63,22 +63,17 @@ namespace ImageWorld.ApiApp.Controllers
         [Route("api/Image/upload")]
         [HttpPost]
         [AcceptVerbs("POST")]
-        public async void UploadSingleFile([FromBody] HttpPostedFileBase uploadFile)
-        { 
-            using (var ms = new MemoryStream())
+        public async void UploadSingleFile()
+        {
+            var bytes = await Request
+                .Content
+                .ReadAsByteArrayAsync();
+
+            await DocumentDbHelper.AddImageToDbAsync(new Core.Class.Image
             {
-                uploadFile.InputStream.CopyTo(ms);
-
-                var bytes = ms.ToArray();
-
-                await DocumentDbHelper.AddImageToDbAsync(new Core.Class.Image
-                {
-                    id = Guid.NewGuid(),
-                    Bytes = bytes
-                });
-            }
-
+                id = Guid.NewGuid(),
+                Bytes = bytes
+            });
         }
-
     }
 }
