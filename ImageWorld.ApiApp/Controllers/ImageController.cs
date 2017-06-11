@@ -54,16 +54,27 @@ namespace ImageWorld.ApiApp.Controllers
             return result;
         }
 
+        
+
+
         [SwaggerOperation("GetImages")]
         [Route("api/Image/GetImages")]
         [SwaggerResponse(HttpStatusCode.OK)]
-        public IHttpActionResult GetImages()
+        public async Task<IHttpActionResult> GetImages()
         {
-            var image = DocumentDbHelper
+            var images = DocumentDbHelper
                 .GetAllImageIds()
-                .Select( s => $"http://hsbc-api-app.azurewebsites.net/api/Image/GetById/?id={s}" );
+                .Select(async ev => await DocumentDbHelper.GetImageAsync(ev))
+                .ToArray();
+
+            // null off the binary data for all images
+
+            foreach(var image in images)
+            {
+                (await image).Bytes = null;
+            }
             
-            return Ok(image);
+            return Ok(images);
         }
 
         [Route("api/Image/upload")]

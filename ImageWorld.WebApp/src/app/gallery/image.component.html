@@ -1,6 +1,20 @@
 
 
-<span class="container">
-  <img [src]="image.src"/>
-</span>
+<div class="container">
+  
+  <img [ngClass]="{IsWaldo: image.Result.IsWaldo, 'notdog':(image.Result.Tags.indexOf('dog') == -1), 'dog':(image.Result.Tags.indexOf('dog') > -1)}"
+       src="http://hsbc-api-app.azurewebsites.net/api/Image/GetById/?id={{image.Result.id}}"/>
+
+  <p *ngIf="image.Result.Tags.indexOf('dog')==-1" class="intruder">
+    <b>INTRUDER DETECTED!!!</b>
+  </p>
+
+  <p><b>&quot;{{image.Result.PredictedCaption}}&quot;</b></p>
+
+  <p>Waldo: {{image.Result.WaldoDetected}}</p>
+
+  <ul>
+    <li *ngFor="let tag of image.Result.Tags">{{tag}}</li>
+  </ul>
+</div>
 

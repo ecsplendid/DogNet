@@ -1,9 +1,37 @@
 
 
+.intruder {
+  color: red;
+}
+
 .container {
-  display: inline;
+  display: block;
+  background-color: #eee;
+  border-radius:  15px;
+  padding: 30px;
+  margin: 30px;
+  width: 30%;
+}
+
+.notdog {
+  opacity: 0.5; 
 }
 
 .container>img {
-  width: 200px;
+  width: 150px;
 }
+
+.IsWaldo {
+  border: 2px green solid;
+}
+
+.notdog {
+  height: 100px;
+  width: 100px;
+  background-color: #FA6900;
+  border: 3px red solid;
+  border-radius: 15px;
+  position: relative;
+}
+
+
