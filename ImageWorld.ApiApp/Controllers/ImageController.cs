@@ -63,7 +63,7 @@ namespace ImageWorld.ApiApp.Controllers
         [Route("api/Image/upload")]
         [HttpPost]
         [AcceptVerbs("POST")]
-        public async void UploadSingleFile()
+        public async Task UploadSingleFile()
         {
             var bytes = await Request
                 .Content
@@ -77,7 +77,9 @@ namespace ImageWorld.ApiApp.Controllers
                 Bytes = bytes
             });
 
-            await ServiceBusHelper.AddMessageToQueueAsync(guid.ToString());
+            await ServiceBusHelper
+                        .AddMessageToQueueAsync(guid.ToString()
+                );
         }
     }
 }

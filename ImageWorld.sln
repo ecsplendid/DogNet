@@ -13,8 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageWorld.ApiApp", "ImageW
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageWorld.WebApp", "ImageWorld.WebApp\ImageWorld.WebApp.csproj", "{ED3CF1CA-7325-4CF1-9ACD-E58077189176}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageWorld.ConsoleDriver", "ImageWorld.ConsoleDriver\ImageWorld.ConsoleDriver.csproj", "{C166B5F2-90B6-41C4-899D-CCB30E632758}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,10 +39,6 @@ Global
 		{ED3CF1CA-7325-4CF1-9ACD-E58077189176}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED3CF1CA-7325-4CF1-9ACD-E58077189176}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED3CF1CA-7325-4CF1-9ACD-E58077189176}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C166B5F2-90B6-41C4-899D-CCB30E632758}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C166B5F2-90B6-41C4-899D-CCB30E632758}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C166B5F2-90B6-41C4-899D-CCB30E632758}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C166B5F2-90B6-41C4-899D-CCB30E632758}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

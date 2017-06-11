@@ -12,7 +12,7 @@ export class SimpleFileUploader {
 
   constructor(private httpService: Http) { }
 
-  apiEndPoint: string = "http://localhost:60133/api/Image/upload";
+  apiEndPoint: string = "http://hsbc-api-app.azurewebsites.net/api/Image/upload";
 
   public uploading: boolean;
   public completed: boolean;

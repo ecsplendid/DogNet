@@ -19,6 +19,7 @@ namespace ImageWorld.Core.Class
         public bool WaldoDetected { get; set; }
         public bool IllegalWatermark { get; set; }
         public byte[] Bytes { get; set; }
+        public byte[] ThumbnailBytes { get; set; }
         [JsonProperty(PropertyName = "id")]
         public Guid id { get; set; }
         public override string ToString()
