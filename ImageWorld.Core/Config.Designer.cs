@@ -62,8 +62,8 @@ namespace ImageWorld.Core {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Jvx9ScleKSWy0hQrBp3kGsqKryNoAXmBhfMQIYFzBHzpcHgUNTGGjpEmAhqheizy2v0c2SxIpWmrLYFdl" +
-            "zhb2g==")]
+        [global::System.Configuration.DefaultSettingValueAttribute("g9FXZK9i60XSyok1hPe46jb7ByfMYyYT15OJGaJLo4OncNhJoIsq4OAT3jsKhvyjaDoSto09GICtEp394" +
+            "gVgcg==")]
         public string DocDbKey {
             get {
                 return ((string)(this["DocDbKey"]));

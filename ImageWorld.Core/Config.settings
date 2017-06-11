@@ -15,7 +15,7 @@
       <Value Profile="(Default)">Endpoint=sb://hsbc-china-queue.servicebus.windows.net/;SharedAccessKeyName=all;SharedAccessKey=qlsBFTwzYAzXuPPVreuussQDGDcE5s/4lF4F0iwc0IU=;EntityPath=images</Value>
     </Setting>
     <Setting Name="DocDbKey" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">Jvx9ScleKSWy0hQrBp3kGsqKryNoAXmBhfMQIYFzBHzpcHgUNTGGjpEmAhqheizy2v0c2SxIpWmrLYFdlzhb2g==</Value>
+      <Value Profile="(Default)">g9FXZK9i60XSyok1hPe46jb7ByfMYyYT15OJGaJLo4OncNhJoIsq4OAT3jsKhvyjaDoSto09GICtEp394gVgcg==</Value>
     </Setting>
     <Setting Name="VisionApiKey" Type="System.String" Scope="Application">
       <Value Profile="(Default)">94b9defab2d447f8ab6c95cbca04b075</Value>

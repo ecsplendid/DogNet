@@ -1,0 +1,173 @@
+[33mcommit 4e0ec046bd7aa9780ee1f1896e03d8c4620b1983[m
+Author: Tim Scarfe <tim+git@developer-x.com>
+Date:   Sun Jun 11 15:22:54 2017 +0100
+
+    Targeting 4.6.1 now runs on my laptop
+
+[33mcommit ededbefdef3cdd2d3fbb02cdcbcd7200079b615a[m
+Author: Tim Scarfe <tim+git@developer-x.com>
+Date:   Sat Jun 10 09:23:36 2017 +0100
+
+    Final commit, still can't get it working...
+
+[33mcommit 34705d93a4c46fbe22314db6478e992f169afba3[m
+Author: Tim Scarfe <tim+git@developer-x.com>
+Date:   Sat Jun 10 09:07:44 2017 +0100
+
+    Attempt at file upload... the client side works, the server side doesnt
+
+[33mcommit 08044e5838230663760e86bfb9bf3cb197e6b597[m
+Author: Tim Scarfe <tim+git@developer-x.com>
+Date:   Sat Jun 10 07:14:04 2017 +0100
+
+    Empty file upload component (works)
+
+[33mcommit b7fad0d7e0c6083fa446ff178262f052fd42f7b4[m
+Author: Tim Scarfe <tim+git@developer-x.com>
+Date:   Fri Jun 9 23:18:30 2017 +0100
+
+    restructured the app.component into another filter
+
+[33mcommit aef2d3a54f33b7d00732db470113bcd23b390836[m
+Author: Tim Scarfe <tim+git@developer-x.com>
+Date:   Fri Jun 9 23:03:40 2017 +0100
+
+    Adding in helper commands to readme
+
+[33mcommit d1cbfcaa9ec0418d2fa0741e5d2a26cf6f8fea4a[m
+Author: Tim Scarfe <tim+git@developer-x.com>
+Date:   Fri Jun 9 22:11:55 2017 +0100
+
+    Webservice working for ids, gallery binding to this
+
+[33mcommit 1435fa2f1148edad1d74d34ed689b4f593820cf7[m
+Author: Tim Scarfe <tim+git@developer-x.com>
+Date:   Fri Jun 9 16:26:41 2017 +0100
+
+    Got the image api returning and added a 30 minute cache to it
+
+[33mcommit f8bb27ec1d3bd6fa3c71e453392757e737672e06[m
+Author: Tim Scarfe <tim+git@developer-x.com>
+Date:   Fri Jun 9 11:59:58 2017 +0100
+
+    no errors on build, some dependency issues, the image api still stops execution
+
+[33mcommit 318b2a25c2bcb458be41d3343fb9b8997684150d[m
+Author: Tim Scarfe <tim+git@developer-x.com>
+Date:   Fri Jun 9 10:15:38 2017 +0100
+
+    Got the auto recompilation stuff working
+
+[33mcommit a0878dc34dba572c91e866786cc8a67c5e22637c[m
+Author: Tim Scarfe <tim+git@developer-x.com>
+Date:   Fri Jun 9 10:04:31 2017 +0100
+
+    Fixed http module error
+
+[33mcommit 882b7d20bdd452f08a4d708d9d9e04a14905becf[m
+Author: Tim Scarfe <tim+git@developer-x.com>
+Date:   Fri Jun 9 10:02:37 2017 +0100
+
+    Angular 2 basic scaffold app (got an http module error)
+
+[33mcommit 0c72ac5249926e4554483c8f7fe4839c4f83d2bc[m
+Author: Tim Scarfe <tim+git@developer-x.com>
+Date:   Fri Jun 9 10:01:10 2017 +0100
+
+    Another try gitignore
+
+[33mcommit 1e7884fba5bab7d0856cb9d0d44fb45e91851848[m
+Author: Tim Scarfe <tim+git@developer-x.com>
+Date:   Fri Jun 9 10:00:07 2017 +0100
+
+    Try again on gitignore
+
+[33mcommit 72b45bcce3132916d236af57ebe7daf9e24cc0ee[m
+Author: Tim Scarfe <tim+git@developer-x.com>
+Date:   Fri Jun 9 09:59:28 2017 +0100
+
+    New gitignore for angular 2 stuff
+
+[33mcommit bad50c0148a40afb58b4a8fa6ba391de5fafc252[m
+Author: Tim Scarfe <tim+git@developer-x.com>
+Date:   Fri Jun 9 09:28:48 2017 +0100
+
+    Got basic .netcore web app and api app installed
+
+[33mcommit f9f9674c87a1af61604f0136ec9d46178af88bb2[m
+Author: Tim Scarfe <tim+git@developer-x.com>
+Date:   Fri Jun 9 08:45:50 2017 +0100
+
+    Finally fixed the documentdb update bug, it was newtonsoft.json (always this package gives me dependency issues). When in the execution context of the azure function it wasn't reading the [JsonProperty(PropertyName = "id")] and was sending up a capital Id to the docdb service!
+
+[33mcommit b8578127b04bc07078507e4ed78c2d7e3d877504[m
+Author: Tim Scarfe <tim+git@developer-x.com>
+Date:   Thu Jun 8 20:43:51 2017 +0100
+
+    More dependency problems, custom vision 2 depends on filesystem 4010
+
+[33mcommit 10b0a518a0cd2a30f122dd6a467e99d45c9052ba[m
+Author: Tim Scarfe <tim+git@developer-x.com>
+Date:   Thu Jun 8 19:00:57 2017 +0100
+
+    Faffing around with framework versions on projects
+
+[33mcommit 42128b5ff32da6b81606b104b72899742fac0057[m
+Author: Tim Scarfe <tim+git@developer-x.com>
+Date:   Thu Jun 8 19:00:46 2017 +0100
+
+    Wiring up custom vision service
+
+[33mcommit b98f36ee8ffe755169fa929b755a57139e4ea1d0[m
+Author: Tim Scarfe <tim+git@developer-x.com>
+Date:   Thu Jun 8 19:00:01 2017 +0100
+
+    Adding in test images for custom image service
+
+[33mcommit 17cc3e5667f314ac7a92ab6e092c57705d464501[m
+Author: Tim Scarfe <tim+git@developer-x.com>
+Date:   Thu Jun 8 17:17:49 2017 +0100
+
+    Added a console driver to add message onto queue, whole basic process seems to work robustly now including on azure portal
+
+[33mcommit a05ed75f7e5442a8e0ce30b12128d8950ed5af66[m
+Author: Tim Scarfe <tim+git@developer-x.com>
+Date:   Thu Jun 8 15:19:59 2017 +0100
+
+    Got the cognitive services helper API working
+
+[33mcommit 6b59c1a4f56411f3af299c88d611e0662bcb7fef[m
+Author: Tim Scarfe <tim+git@developer-x.com>
+Date:   Thu Jun 8 14:31:09 2017 +0100
+
+    Got document db wrangling apis sorted out after much consternation
+
+[33mcommit ad37b8621d7b96d6e064cf1017895b550276ecbf[m
+Author: Tim Scarfe <tim+git@developer-x.com>
+Date:   Thu Jun 8 12:44:26 2017 +0100
+
+    Got the local azure function reading off the service bus queue!
+
+[33mcommit e2e38a8dafc438f1f9b34e7a15fc78d728141c7a[m
+Author: Tim Scarfe <tim+git@developer-x.com>
+Date:   Thu Jun 8 11:36:31 2017 +0100
+
+    Got service bus and doc db uploading stuff on tests
+
+[33mcommit 618754a0c51dd4acbce2be8f99defac1ba5c1203[m
+Author: Tim Scarfe <tim+git@developer-x.com>
+Date:   Thu Jun 8 08:46:15 2017 +0100
+
+    Imported libs for service bus and docdb, excluded keys from web.configs, will check the config in interactively from now on!
+
+[33mcommit 1db9e41616fb4e97b1e2403577398e7e4881bbfe[m
+Author: Tim Scarfe <tim+git@developer-x.com>
+Date:   Thu Jun 8 08:13:47 2017 +0100
+
+    Add project files.
+
+[33mcommit 7c329739582427d19cb77c36a0e02ceb05f5363d[m
+Author: Tim Scarfe <tim+git@developer-x.com>
+Date:   Thu Jun 8 08:13:40 2017 +0100
+
+    Add .gitignore and .gitattributes.
