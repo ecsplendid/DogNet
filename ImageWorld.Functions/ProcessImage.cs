@@ -36,8 +36,8 @@ namespace ImageWorld.Functions
 
             // insert azureML code here
 
-            ThumbnailHelper
-                .ApplyThumbnail(image);
+            //ThumbnailHelper
+            //    .ApplyThumbnail(image);
 
             DocumentDbHelper
                 .UpdateImage(image);

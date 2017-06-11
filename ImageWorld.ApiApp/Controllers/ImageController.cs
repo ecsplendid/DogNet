@@ -32,7 +32,13 @@ namespace ImageWorld.ApiApp.Controllers
             
             var result = new HttpResponseMessage(HttpStatusCode.OK)
             {
-                Content = new ByteArrayContent(image.Bytes)
+                //Content = new ByteArrayContent(
+                //    image.ThumbnailBytes ?? image.Bytes
+                //    )
+
+                Content = new ByteArrayContent(
+                    image.Bytes
+                )
             };
             
             result.Headers.CacheControl = new CacheControlHeaderValue
