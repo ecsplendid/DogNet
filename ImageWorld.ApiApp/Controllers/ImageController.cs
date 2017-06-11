@@ -69,11 +69,15 @@ namespace ImageWorld.ApiApp.Controllers
                 .Content
                 .ReadAsByteArrayAsync();
 
+            var guid = Guid.NewGuid();
+
             await DocumentDbHelper.AddImageToDbAsync(new Core.Class.Image
             {
-                id = Guid.NewGuid(),
+                id = guid,
                 Bytes = bytes
             });
+
+            await ServiceBusHelper.AddMessageToQueueAsync(guid.ToString());
         }
     }
 }

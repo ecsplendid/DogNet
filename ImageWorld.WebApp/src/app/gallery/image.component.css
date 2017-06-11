@@ -1,0 +1,9 @@
+
+
+.container {
+  display: inline;
+}
+
+.container>img {
+  width: 200px;
+}

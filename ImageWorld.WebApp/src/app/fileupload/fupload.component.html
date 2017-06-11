@@ -1,8 +1,11 @@
 
 
-<h3>This is my file uploader</h3>
+<h2>Dog Uploader</h2>
 
-<input type="file" (change)="fileChange($event)" placeholder="Upload file" accept=".jpg,.png">
+<input type="file"
+       (change)="fileChange($event)"
+       placeholder="Upload file"
+       accept=".jpg,.png">
 
 <p *ngIf="uploading">Uploading...</p>
 <p *ngIf="completed">Upload completed!</p>

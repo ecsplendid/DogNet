@@ -1,25 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
-import { AppComponent, galleryConfig } from './gallery/app.component';
+import { DogGallery } from './gallery/gallery.component';
+import { DogImage } from './gallery/image.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { GalleryModule } from 'ng-gallery';
 import { SimpleFileUploader } from './fileupload/fupload.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
+    DogGallery,
+    DogImage,
     SimpleFileUploader
   ],
   imports: [
     BrowserModule,
     HttpModule,
-    BrowserAnimationsModule,
-    GalleryModule.forRoot(galleryConfig),
+    BrowserAnimationsModule
     
   ],
   providers: [],
-  bootstrap: [AppComponent, SimpleFileUploader]
+  bootstrap: [DogGallery, SimpleFileUploader]
 })
 export class AppModule { }
