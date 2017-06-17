@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Http } from '@angular/http'
+import { Http, Headers, RequestOptions } from '@angular/http'
 
 export interface Result {
   ProcessedCustomVision: boolean;
@@ -37,15 +37,26 @@ export class DogGallery implements OnInit {
   constructor(private httpService: Http) { }
     apiValues: string[] = [];
     ngOnInit() {
-      this.httpService.get('http://hsbc-api-app.azurewebsites.net/api/Image/GetImages').subscribe(values => {
+
+      let headers = new Headers({
+          'Ocp-Apim-Subscription-Key': 
+          'b8c6a53f26a54643b2359cbe91133f92'});
+
+      let options = new RequestOptions({ headers: headers });
+
+      this
+        .httpService
+        .get('http://hsbcimageapi.azure-api.net/api/Image/GetImages', options)
+        .subscribe(values => {
 
         console.log(values.json());
         
         this.images = (values.json() as Image[]);
         
       });
-    }
-    images: Image[] = [];
+  }
+
+  images: Image[] = [];
   
 }
 
