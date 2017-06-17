@@ -19,7 +19,6 @@ namespace ImageWorld.Core.Helpers
 
             var endpoint = new PredictionEndpoint(predictionEndpointCredentials);
             
-
             var result = endpoint.PredictImage(
                 new Guid(Config.Default.CustomVisionProjectId),
                 new MemoryStream(image.Bytes), 
