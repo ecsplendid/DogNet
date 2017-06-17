@@ -32,10 +32,6 @@ namespace ImageWorld.ApiApp.Controllers
             
             var result = new HttpResponseMessage(HttpStatusCode.OK)
             {
-                //Content = new ByteArrayContent(
-                //    image.ThumbnailBytes ?? image.Bytes
-                //    )
-
                 Content = new ByteArrayContent(
                     image.Bytes
                 )
@@ -53,28 +49,34 @@ namespace ImageWorld.ApiApp.Controllers
 
             return result;
         }
-
         
-
-
         [SwaggerOperation("GetImages")]
         [Route("api/Image/GetImages")]
         [SwaggerResponse(HttpStatusCode.OK)]
         public async Task<IHttpActionResult> GetImages()
         {
+
             var images = DocumentDbHelper
                 .GetAllImageIds()
                 .Select(async ev => await DocumentDbHelper.GetImageAsync(ev))
                 .ToArray();
 
+            await Task.WhenAll(tasks: images);
+
+            var i2 = images
+                .Select(t => t.Result)
+                .Where(i => !string.IsNullOrWhiteSpace(i.PredictedCaption));
+
             // null off the binary data for all images
 
-            foreach(var image in images)
+            foreach (var image in i2)
             {
-                (await image).Bytes = null;
+                image.Bytes = null;
             }
             
-            return Ok(images);
+
+
+            return Ok(i2);
         }
 
         [Route("api/Image/upload")]
